@@ -3,5 +3,5 @@ QE-NextGen is an AI model that can automate the UI test cases by parsing a URL o
 
 ### How to run the model
 1. Create a virtual environment by using the command **python -m venv name-of-your-virtual-environment**
-2. Activate the virtual environment by using the command **.\venv\Scripts\activate**
+2. Activate the virtual environment by using the command **.\venv\Scripts\activate**. [Here, venv is name of my virtual environment]
 3. Use the command **Set-ExecutionPolicy Unrestricted -Scope Process** if running command at Step 2 throws error
