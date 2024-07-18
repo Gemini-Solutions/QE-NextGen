@@ -1,7 +1,39 @@
-# QE-NextGen
-QE-NextGen is an AI model that can automate the UI test cases by parsing a URL or part of the DOM structure
+# summary_generator_flask
+## 1. Create a Virtual Environment
 
-### How to run the model
-1. Create a virtual environment by using the command **python -m venv name-of-your-virtual-environment**
-2. Activate the virtual environment by using the command **.\venv\Scripts\activate**. [Here, venv is name of my virtual environment]
-3. Use the command **Set-ExecutionPolicy Unrestricted -Scope Process** if running command at Step 2 throws error
+### On Unix or MacOS
+```bash
+python3 -m venv venv
+```
+### On Windows
+```bash
+python -m venv venv
+```
+
+## 2. Activate the Virtual Environment
+
+### On Unix or MacOS
+
+```bash
+source venv/bin/activate
+```
+
+### On Windows
+```bash
+venv\Scripts\activate
+```
+## 3. install python libs 
+```bash 
+pip install -r requirements.txt
+```
+
+# Run Streamlit App:
+Follow steps 1 to 3 then run
+
+```bash
+  streamlit run main.py
+  ```
+In case this doesn't work, run
+```bash
+python -m streamlit run main.py
+```
