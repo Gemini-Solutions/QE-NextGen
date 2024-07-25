@@ -43,29 +43,6 @@ If you can not think of any possible scenario, then generate atleast two differe
     }}
 ]
 }}
-
-Most Important Note:
-If I am selecting Login button as feature description, then return the following as scenarios_list:
-"scenarios_list": [
-    {{
-    "scenario_title": "Verify the presence of login button",
-    "scenario_description": "This feature will check that login button should appear when user is on home page",
-    "steps": [
-        "Given user is on the home page",
-        "Then login button should be visible on the home page",
-        "Then close the browser"
-    ]
-    }},
-    {{
-    "scenario_title": "Verify the click functionality of the login button",
-    "scenario_description": "This feature will check that login button is redirecting when user clicks the button",
-    "steps": [
-        "Given user is on the home page",
-        "When user clicks on the login button",
-        "Then user should successfully get redirected to another page",
-        "Then close the browser"
-    ]
-    }}
 """
 
 ADD_TEST_GEN_PROMPT = """
@@ -89,11 +66,11 @@ Keep the following format:
 """
 
 TEST_GEN_CONFIG = {
-    "model": "gpt-3.5-turbo-1106",
+    "model": "gpt-4o",
     "chunk_overlap": 0,
-    "temperature": 0, 
+    "temperature": 0,
     "max_tokens": None,
-    "response_format": "json_object"
+    "response_format": "json_object",
 }
 
 

@@ -1,4 +1,6 @@
+import os
 from openai import OpenAI
+
 
 def call_llm(
     conversation,
@@ -6,12 +8,14 @@ def call_llm(
     max_tokens=None,
     user=None,
     stream=False,
-    seed=None,
+    seed=34,
     response_format="text",
-    model="gpt-3.5-turbo"
+    model="gpt-4o",
 ):
 
-    client = OpenAI(api_key="sk-proj-QTYwUdLelOLbN67OyTzJT3BlbkFJLjc2vLvTGMn8GXuxMJ3Z")
+    client = OpenAI(
+        api_key=os.environ.get("NextGenKey"),
+    )
 
     # Define conversation with JSON system message
     if isinstance(conversation, str) and response_format == 'text':

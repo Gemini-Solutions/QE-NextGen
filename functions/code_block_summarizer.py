@@ -28,12 +28,12 @@ Additional Considerations:
 """
 
 SUMMARIZER_CONFIG = {
-    "model": "gpt-3.5-turbo-1106",
+    "model": "gpt-4o",
     "chunk_size": 12000,
     "chunk_overlap": 0,
-    "temperature": 0.1, 
+    "temperature": 0.1,
     "max_tokens": None,
-    "response_format": "text"
+    "response_format": "text",
 }
 
 def summarizer_function(html_code_block, config):

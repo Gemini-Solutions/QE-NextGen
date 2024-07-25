@@ -18,36 +18,35 @@ from utils.error_handlers import MissingFeature
 import streamlit as st
 
 FEATURE_FINDER_PROMPT = """
-You will be provided a HTML code. Your objective is to identify all the functional test cases for the given HTML code. Think about all possible positive and negative test cases that are possible.
+You will be provided with HTML code. Your objective is to identify all possible functional test cases, considering both positive and negative scenarios.
 
-Note:
-1. Do not give the features or functionalities that aren't present in the HTML Code.
-2. Do not repeat the test cases.
-3. Do not hallucinate.
-
-Present the extracted information in JSON format as follows:
+Output Format: Present the extracted information in JSON format as follows:
 
 {{
-"feature": [
-  {{"name": "Feature Name 1", "description": "Description of the feature functionality 1.", "xpath": "xpath_expression_1"}},
-  {{"name": "Feature Name 2", "description": "Description of the feature functionality 2.", "xpath": "xpath_expression_2"}},
-  // ... (for additional features)
-]
+  "feature": [
+    {{"name": "Feature Name 1", "description": "Description of the feature functionality 1.", "xpath": "xpath_expression_1"}},
+    {{"name": "Feature Name 2", "description": "Description of the feature functionality 2.", "xpath": "xpath_expression_2"}},
+    // ... (for additional features)
+  ]
 }}
 
-xpath expression for reference purpose is given below:
+Xpath expression for reference purpose is given below:
 1. //tagname[contains(@attribute,'value')]
 2. //tagname[@attribute='value']
 3. //tagname[contains(text(),'visible text')]
 
-Note: Do not blindly copy the xpath expressions. Create valid xpaths by yourself.
+Note:
+1. Do not include features or functionalities that are not present in the HTML code.
+2. Do not repeat test cases.
+3. Do not hallucinate.
+4. Do not blindly copy the xpath expressions. Create valid xpaths by yourself.
 
 Here is the HTML Code: 
 {HTML_CODE}
 """
 
 FEATURE_FINDER_CONFIG = {
-    "model": "gpt-3.5-turbo-1106",
+    "model": "gpt-4o",
     "chunk_size": 12000,
     "chunk_overlap": 0,
     "temperature": 0.1, 

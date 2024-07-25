@@ -5,6 +5,7 @@ def calculate_cost(usage, model="gpt-3.5-turbo-1106"):
         "gpt-3.5-turbo-1106": {"prompt": 0.0010, "completion": 0.0020},
         "gpt-3.5-turbo-instruct": {"prompt": 0.0015, "completion": 0.0020},
         "ada v2": {"prompt": 0.0001, "completion": 0.0001},
+        "gpt-4o": {"prompt": 0.0010, "completion": 0.015}
     }
 
     # Extracting token counts from the usage dictionary

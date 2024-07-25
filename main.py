@@ -47,7 +47,7 @@ if code_or_url == "URL":
     st.write(df_feature_list)
 
     st.markdown("## Select the Feature")
-    selected_feature = st.selectbox("Select Feature to Summarize:", df_feature_list['name'], index=None )
+    selected_feature = st.selectbox("Select Feature to Summarize:", df_feature_list['name'], index=None,on_change=on_click_button)
 
     if selected_feature == None:
         st.warning("Select Feature")
@@ -127,11 +127,8 @@ if selected_scenario_name != None:
     scenario = next((scenario for scenario in scenatio_list if scenario['scenario_title'] == selected_scenario_name), None)
     scenario_str = generate_string_from_scenario([scenario])
     feature_header = fetch_feature_header(st.session_state["messages"])
-    # print(feature_header+scenario_str)
+    
 
-
-
-# if generate_code_button:
     stepdefinition_file, locator_file, implementation_file, code_gen_cost = st_generate_code(feature_header+scenario_str,code_block,CODE_GEN_CONFIG)
     # stepdefinition_file, locator_file, implementation_file= "","",""
     try:

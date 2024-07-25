@@ -37,3 +37,6 @@ In case this doesn't work, run
 ```bash
 python -m streamlit run main.py
 ```
+
+## 3. If you get any error while creating the virtual environment, run
+```Set-ExecutionPolicy Unrestricted -Scope Process``` command
