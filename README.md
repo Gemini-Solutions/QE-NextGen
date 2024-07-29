@@ -23,7 +23,13 @@ If the command does not return the Python version, install Python from ManageEng
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/4fbd43a2-5fb2-4a4a-9704-6612bf63bd07">
 
 ### 3. Install extensions that will support you while working on Python in VS Code.
-### 4. Create a virtual environment by using the command:
+### 4. Create an .env file and add a ChatGPT key there. Ask for the Key's value in DM.
+```bash
+NextGenKey = "value of key"
+```
+Note: Make sure that this key is never exposed. If `.gitignore` file does not ignore the `.env` file, make sure to add it before pushing your code
+
+### 5. Create a virtual environment by using the command:
 ```bash
 python -m venv <name-of-your-virtual-environment>
 ```
@@ -37,23 +43,24 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 
 On Gemini machines, you have restrictions to set execution policy for the current session only, so make sure to execute this command each session.
 
-### 5. Activate your virtual environment by running the following command:
+### 6. Activate your virtual environment by running the following command:
 ```bash
 venv\Scripts\activate
 ```
 Note: 
-## 3. install python libs 
+1. Never install any library without activating the virtual environment.
+2. You will be able to see the name of your virtual environment at the beginning of the terminal's command line interface.
+
+### 7. Install required Python libraries by running the command given below:
 ```bash 
 pip install -r requirements.txt
 ```
 
-# Run Streamlit App:
-Follow steps 1 to 3 then run
-
-```bash
-  streamlit run main.py
-  ```
-In case this doesn't work, run
+### To run the application, activate the Streamlit App by running the command given below:
 ```bash
 python -m streamlit run main.py
 ```
+## Some other important pointers to note:
+1. Create your branch from `develop` branch to make the changes.
+2. Never push anything before raising a Peer Review request
+3. The API key is intended to be used for this project only.
