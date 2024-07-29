@@ -11,7 +11,7 @@ def call_llm(
     model="gpt-3.5-turbo"
 ):
 
-    client = OpenAI(api_key="sk-proj-QTYwUdLelOLbN67OyTzJT3BlbkFJLjc2vLvTGMn8GXuxMJ3Z")
+    client = OpenAI(api_key=os.environ.get("NextGenKey"),)
 
     # Define conversation with JSON system message
     if isinstance(conversation, str) and response_format == 'text':
