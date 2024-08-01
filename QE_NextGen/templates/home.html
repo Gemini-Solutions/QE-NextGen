@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Find Features</h2>
+    <p>{{ hint }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td style="width: 25%;">{{ form.code_or_url.label_tag }}</td>
+                <td>{{ form.code_or_url }}</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
