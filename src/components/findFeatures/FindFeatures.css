@@ -1,0 +1,171 @@
+.main {
+  padding: 2.625rem 9.375rem 2.625rem 9.375rem;
+  color: var(--main-text);
+}
+
+.find-features-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.choose-feature-type {
+  display: flex;
+}
+
+.feature-type {
+  font-size: 1rem;
+}
+
+.info-btn {
+  width: 1.2188rem;
+  height: 1.2188rem;
+  margin-left: 1.25%;
+  margin-top: 1%;
+}
+
+.type-radio {
+  width: 1.2188rem;
+  height: 1.2188rem;
+  margin-left: 1.5rem;
+  margin-top: 1%;
+  border: none;
+}
+
+.type-label {
+  margin-left: 0.6%;
+  margin-top: 1%;
+}
+
+.type-radio {
+  display: none;
+}
+
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-right: 5px;
+  margin-left: 3%;
+  cursor: pointer;
+  margin-top: 1%;
+}
+
+.type-radio:checked + .custom-radio {
+  border-color: var(--orange);
+}
+
+.custom-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border: 6px solid var(--orange);
+}
+
+.type-radio:checked + .custom-radio::after {
+  opacity: 1;
+}
+
+.enter-details {
+  margin-top: -0.5%;
+  font-size: 0.875rem;
+}
+
+.mandatory {
+  color: red;
+  padding-left: 0.2%;
+}
+
+.textarea {
+  width: 70rem;
+  height: 5.875rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.features-loader {
+  margin-top: 0.8%;
+}
+
+.feature-cards {
+  display: flex;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  width: 83.25rem;
+}
+
+.feature-card {
+  width: 21.5181rem;
+  height: 7.875rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(160, 160, 160, 0.1);
+  color: var(--main-text);
+}
+
+.feature-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 400;
+}
+
+.feature-count-display {
+  display: flex;
+}
+
+.feature-count-heading {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.feature-count {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--circle-bg);
+  border-radius: 50%;
+  margin-top: 1%;
+  margin-left: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  line-height: 2rem;
+}
+
+.enter-para {
+  color: var(--enter-text);
+  font-size: 0.875rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .main {
+    padding: 1rem 4.375rem 1rem 4.375rem;
+    color: var(--main-text);
+    overflow-x: hidden;
+  }
+}

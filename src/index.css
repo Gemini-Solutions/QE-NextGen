@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+html {
+  font-family: "Lexend", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Lexend", sans-serif;
+}
+
+input {
+  font-family: "Lexend", sans-serif;
+}
+
+textarea {
+  font-family: "Lexend", sans-serif;
+}
+
+:root {
+  --navBar-border: #cfd6dc;
+  --orange: #ff7e7c;
+  --navBar-text: #abb7c2;
+  --main-text: #333333;
+  --circle-bg: #31394F;
+  --capsule-text: #3868AB;
+  --capsule-bg: #EBF0F7;
+  --enter-text: #525A60;
+  --dropdown-border: #D4D7DA;
 }

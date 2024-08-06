@@ -1,0 +1,51 @@
+.feature-suggestions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.feature-capsule {
+  background-color: var(--capsule-bg);
+  color: var(--capsule-text);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1.25rem;
+  min-width: 7.5rem;
+  max-width: 200rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.feature-selection {
+  margin-top: 1.5rem;
+}
+
+.features-dropdown {
+  width: 24.125rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--dropdown-border);
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.features-dropdown option {
+  font-size: 0.875rem;
+  color: var(--enter-text);
+  padding: 5rem;
+}
+
+.ant-select,
+.ant-select-selector,
+.ant-select-open,
+.ant-select-selection-search,
+.ant-select-focused {
+  border: none !important;
+  width: 24.125rem;
+  height: 3rem;
+}
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  margin-top: 0.25%;
+  height: 15rem;
+}

@@ -1,0 +1,13 @@
+.cd-box3 {
+  color: var(--orange);
+  border-bottom: 3px solid var(--orange) !important;
+  box-shadow: 0 5px 4px -2.5px rgba(0, 0, 0, 0.3);
+  border-left: none !important;
+  margin-left: -4.56%;
+  border-radius: 0 0.1875rem 0.1875rem 0;
+  border-right: 1px solid var(--navBar-border);
+}
+
+.cd-number3 {
+  border: 2px solid var(--orange);
+}

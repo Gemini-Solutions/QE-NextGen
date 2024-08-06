@@ -1,0 +1,51 @@
+.pagination {
+    display: flex;
+    width: 100wv;
+  }
+  
+  .pagination-fix {
+    position: absolute;
+    top: 89.5%;
+    font-size: 0.875rem;
+  }
+  
+  .pagination-numbers {
+    position: absolute;
+    right: 30%;
+    width: 12rem;
+    top: 91.25%;
+  }
+  
+  .pagination-button {
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-left: 1.5%;
+  }
+  
+  .pagination-button.active {
+    background-color: var(--main-text);
+    color: white;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  }
+  
+  @media screen and (max-width: 1919px) {
+    .pagination {
+      padding: 1rem;
+    }
+  
+    .pagination-fix {
+      position: absolute;
+      top: 144%;
+      font-size: 0.875rem;
+    }
+  
+    .pagination-numbers {
+      position: absolute;
+      right: 3%;
+      top: 145%;
+    }
+  }
+  
