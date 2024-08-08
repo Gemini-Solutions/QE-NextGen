@@ -84,6 +84,12 @@ export default function FindFeatures() {
   const startIndex = (currentPage - 1) * featuresPerPage + 1;
   const endIndex = Math.min(currentPage * featuresPerPage, features.length);
 
+  useEffect(() => {
+    localStorage.removeItem("features");
+    setFeatures([]);
+    setCurrentPage(1);
+  }, [isSelected]);
+
   return (
     <div className="main">
       <FindFeaturesNavbar />

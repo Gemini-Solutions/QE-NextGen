@@ -6,6 +6,7 @@ html {
 
 body {
   font-family: "Lexend", sans-serif;
+  background-color: #F8FAFB;
 }
 
 input {
@@ -17,6 +18,7 @@ textarea {
 }
 
 :root {
+  --main-bg: #F8FAFB;
   --navBar-border: #cfd6dc;
   --orange: #ff7e7c;
   --navBar-text: #abb7c2;
@@ -26,4 +28,5 @@ textarea {
   --capsule-bg: #EBF0F7;
   --enter-text: #525A60;
   --dropdown-border: #D4D7DA;
+  --codeEditor-border: #bdbdbd;
 }

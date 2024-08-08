@@ -23,10 +23,10 @@
 .features-dropdown {
   width: 24.125rem;
   height: 3rem;
+  margin-top: -0.5%;
   border-radius: 0.5rem;
   border: 1px solid var(--dropdown-border);
   justify-content: space-between;
-  padding: 1rem;
 }
 
 .features-dropdown option {
@@ -48,4 +48,79 @@
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
   margin-top: 0.25%;
   height: 15rem;
+}
+
+.code-editor {
+  word-wrap: break-word;
+  width: 67.5rem;
+}
+
+.featureFileCE {
+  width: 67.5rem;
+  height: 29.875rem;
+  border: 1px solid var(--codeEditor-border);
+}
+
+.ͼ2 .cm-gutters,
+.ͼ2 .cm-activeLineGutter {
+  background-color: #5b5b5b;
+  color: white;
+}
+
+.ͼ4 .cm-content {
+  font-family: "Lexend";
+}
+
+.feature-summary {
+  background-color: white;
+  width: 65.5rem;
+  height: 5.375rem;
+  padding: 1rem;
+  border: 1px solid var(--dropdown-border);
+  border-radius: 0.5rem;
+  margin-top: -0.5%;
+}
+
+.feature-file-heading {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.copy {
+  background-color: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 4;
+  top: 63%;
+  left: 62.5%;
+}
+
+.copy svg {
+  width: 14px;
+  height: 14px;
+}
+
+.copied-message {
+  position: absolute;
+  z-index: 4;
+  top: 64%;
+  left: 62%;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1919px) {
+  .copy {
+    top: 99%;
+    left: 86%;
+  }
+
+  .copied-message {
+    position: absolute;
+    z-index: 4;
+    top: 100%;
+    left: 85.5%;
+    font-size: 12px;
+  }
 }

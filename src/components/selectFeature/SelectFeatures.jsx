@@ -1,23 +1,65 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./SelectFeatures.css";
 import SelectFeatureNavbar from "../../helper/navBar/selectFeatureNavbar/SelectFeatureNavbar";
 import { MenuItem, Select } from "@mui/material";
-import SelectInput from "@mui/material/Select/SelectInput";
+import CodeMirror from "@uiw/react-codemirror";
+import { ReactSVG } from "react-svg";
+import copy from "../../assets/copy.svg";
 
 export default function SelectFeatures() {
   const [features, setFeatures] = useState([]);
   const [firstFour, setFirstFour] = useState([]);
-  const [selectedFeature, setSelectedFeature] = useState("");
+  const [selectedFeature, setSelectedFeature] = useState(null);
+  const [featureFileContent, setFeatureFileContent] = useState("");
+  const [summary, setSummary] = useState("");
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const savedFeatures = JSON.parse(localStorage.getItem("features")) || [];
     setFeatures(savedFeatures);
-    const firstFour = savedFeatures.slice(0, 4);
-    setFirstFour(firstFour);
+    setFirstFour(savedFeatures.slice(0, 4));
   }, []);
 
-  const handleSelection = (event) => {
-    setSelectedFeature(event.target.value);
+  useEffect(() => {
+    if (selectedFeature) {
+      setSummary(selectedFeature.summary);
+    }
+  }, [selectedFeature]);
+
+  const handleSummaryChange = (event) => {
+    setSummary(event.target.value);
+  };
+
+  const handleSelection = async (event) => {
+    const selectedHeading = event.target.value;
+    const feature = features.find((f) => f.heading === selectedHeading);
+    setSelectedFeature(feature);
+
+    if (feature) {
+      try {
+        const response = await fetch(feature.featureFile);
+        if (response.ok) {
+          const text = await response.text();
+          setFeatureFileContent(text);
+        }
+      } catch (error) {
+        console.error("Error fetching the feature file:", error);
+        setFeatureFileContent("Error loading feature file content");
+      }
+    }
+  };
+
+  const copyContent = () => {
+    navigator.clipboard
+      .writeText(featureFileContent)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        console.log("copied");
+      })
+      .catch((err) => {
+        console.error("failed to copy", err);
+      });
   };
 
   return (
@@ -41,7 +83,7 @@ export default function SelectFeatures() {
         <Select
           className="features-dropdown"
           onChange={handleSelection}
-          value={selectedFeature}
+          value={selectedFeature ? selectedFeature.heading : ""}
           displayEmpty
         >
           <MenuItem value="" disabled>
@@ -53,6 +95,33 @@ export default function SelectFeatures() {
             </MenuItem>
           ))}
         </Select>
+        {selectedFeature && (
+          <>
+            <p className="enter-para" style={{ marginTop: "1.5%" }}>
+              Code block summary
+            </p>
+            <textarea
+              className="feature-summary"
+              value={summary}
+              onChange={handleSummaryChange}
+            />
+            <p className="feature-file-heading">Feature File</p>
+            <CodeMirror
+              value={featureFileContent}
+              height="29.875rem"
+              className="code-editor featureFileCE"
+              options={{
+                mode: "text",
+                theme: "default",
+                lineNumbers: true,
+              }}
+            />
+            <button onClick={copyContent} className="copy ff-copy">
+              <ReactSVG src={copy} />
+            </button>
+            {copied && <p className="copied-message">Copied!</p>}
+          </>
+        )}
       </div>
     </div>
   );
