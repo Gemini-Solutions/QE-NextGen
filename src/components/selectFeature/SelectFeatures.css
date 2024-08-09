@@ -51,12 +51,7 @@
 }
 
 .code-editor {
-  word-wrap: break-word;
-  width: 67.5rem;
-}
-
-.featureFileCE {
-  width: 67.5rem;
+  /* width: 67.5rem; */
   height: 29.875rem;
   border: 1px solid var(--codeEditor-border);
 }
@@ -93,8 +88,8 @@
   cursor: pointer;
   position: absolute;
   z-index: 4;
-  top: 63%;
-  left: 62.5%;
+  top: 3%;
+  right: 3%;
 }
 
 .copy svg {
@@ -102,25 +97,19 @@
   height: 14px;
 }
 
+.editor-container {
+  position: relative;
+  width: 67.5rem;
+}
+
+.code-editor {
+  width: 100%;
+}
+
 .copied-message {
   position: absolute;
   z-index: 4;
-  top: 64%;
-  left: 62%;
+  top: 4%;
+  right: 2%;
   font-size: 12px;
-}
-
-@media screen and (max-width: 1919px) {
-  .copy {
-    top: 99%;
-    left: 86%;
-  }
-
-  .copied-message {
-    position: absolute;
-    z-index: 4;
-    top: 100%;
-    left: 85.5%;
-    font-size: 12px;
-  }
 }

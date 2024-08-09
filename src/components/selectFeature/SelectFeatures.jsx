@@ -5,6 +5,7 @@ import { MenuItem, Select } from "@mui/material";
 import CodeMirror from "@uiw/react-codemirror";
 import { ReactSVG } from "react-svg";
 import copy from "../../assets/copy.svg";
+import scenarioData from "../codeGeneration/scenarioData";
 
 export default function SelectFeatures() {
   const [features, setFeatures] = useState([]);
@@ -34,6 +35,7 @@ export default function SelectFeatures() {
     const selectedHeading = event.target.value;
     const feature = features.find((f) => f.heading === selectedHeading);
     setSelectedFeature(feature);
+    localStorage.setItem("scenarios", JSON.stringify(scenarioData));
 
     if (feature) {
       try {
@@ -106,20 +108,22 @@ export default function SelectFeatures() {
               onChange={handleSummaryChange}
             />
             <p className="feature-file-heading">Feature File</p>
-            <CodeMirror
-              value={featureFileContent}
-              height="29.875rem"
-              className="code-editor featureFileCE"
-              options={{
-                mode: "text",
-                theme: "default",
-                lineNumbers: true,
-              }}
-            />
-            <button onClick={copyContent} className="copy ff-copy">
-              <ReactSVG src={copy} />
-            </button>
-            {copied && <p className="copied-message">Copied!</p>}
+            <div className="editor-container">
+              <CodeMirror
+                value={featureFileContent}
+                height="29.875rem"
+                className="code-editor"
+                options={{
+                  mode: "text",
+                  theme: "default",
+                  lineNumbers: true,
+                }}
+              />
+              <button onClick={copyContent} className="copy">
+                <ReactSVG src={copy} />
+              </button>
+              {copied && <p className="copied-message">Copied!</p>}
+            </div>
           </>
         )}
       </div>

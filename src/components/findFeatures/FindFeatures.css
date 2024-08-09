@@ -116,6 +116,7 @@
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(160, 160, 160, 0.1);
   color: var(--main-text);
+  background-color: white;
 }
 
 .feature-card h3 {
@@ -160,6 +161,10 @@
 .enter-para {
   color: var(--enter-text);
   font-size: 0.875rem;
+}
+
+.hover-details {
+  font-size: 14px;
 }
 
 @media screen and (max-width: 1919px) {

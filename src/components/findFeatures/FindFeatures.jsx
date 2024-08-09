@@ -17,6 +17,7 @@ export default function FindFeatures() {
   const [input, setInput] = useState("");
   const [features, setFeatures] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [hovered, setHovered] = useState(false);
   const featuresPerPage = 6;
 
   useEffect(() => {
@@ -90,13 +91,27 @@ export default function FindFeatures() {
     setCurrentPage(1);
   }, [isSelected]);
 
+  const handleHover = () => {
+    setHovered(true);
+  };
+
+  const handleHoverChange = () => {
+    setHovered(false);
+  };
+
   return (
     <div className="main">
       <FindFeaturesNavbar />
       <h1 className="find-features-heading">Find Features</h1>
       <div className="choose-feature-type">
         <p className="feature-type">Choose Feature Type:</p>
-        <ReactSVG src={info} className="info-btn" />
+        <ReactSVG
+          src={info}
+          className="info-btn"
+          onMouseEnter={handleHover}
+          onMouseLeave={handleHoverChange}
+        />
+
         <input
           type="radio"
           id="url"
@@ -122,6 +137,12 @@ export default function FindFeatures() {
           DOM Structure
         </label>
       </div>
+      {hovered && (
+        <div className="hover-details">
+          Enter URL if the web page contains single feature. <br />
+          Enter part of DOM structure if web page contains multiple features
+        </div>
+      )}
       {isSelected === "url" && (
         <div className="enter-details">
           <p className="enter-para">
