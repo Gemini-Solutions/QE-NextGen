@@ -1,6 +1,7 @@
 .main {
   padding: 2.625rem 9.375rem 2.625rem 9.375rem;
   color: var(--main-text);
+  background-color: var(--main-bg);
 }
 
 .find-features-heading {
@@ -165,6 +166,13 @@
 
 .hover-details {
   font-size: 14px;
+  background-color: white;
+  width: 31.5rem; 
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  color: var(--enter-text);
+  box-shadow: 0 4px 8px rgba(160, 160, 160, 0.1);
 }
 
 @media screen and (max-width: 1919px) {
